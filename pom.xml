@@ -36,10 +36,12 @@
       <artifactId>maven-checkstyle-plugin</artifactId>
       <version>3.3.0</version>
       <configuration>
+		  
         <configLocation>google_checks.xml</configLocation> <!-- Use Google's style guide -->
         <encoding>UTF-8</encoding>
         <consoleOutput>true</consoleOutput>
         <failsOnError>true</failsOnError>
+        
       </configuration>
       <executions>
         <execution>
@@ -51,6 +53,19 @@
         </execution>
       </executions>
     </plugin>
+      
+    <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-jar-plugin</artifactId>
+    <version>3.3.0</version>
+    <configuration>
+      <archive>
+        <manifest>
+          <mainClass>App</mainClass>
+        </manifest>
+      </archive>
+    </configuration>
+  </plugin>
       
     </plugins>
   </build>
